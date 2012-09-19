@@ -50,7 +50,7 @@
 
    <div class="row-fluid lower">
       <div class="list-page span2">
-         <h1>Tags</h1>
+         <h1>Tags <button class="btn btn-success"><i class="icon-plus icon-white"></i></button></h1>
          <div class="list-area tags">
             <ul class="multi-list">
                <li>trail:INFO_111</li>
@@ -63,70 +63,83 @@
       <div class="list-page span10">
          <h1>Links</h1>
          <div class="list-area link">
-            <ul class="multi-list">
+            <ol class="multi-list">
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 202 Course Page</a>
-                     <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 202 Course Page</a>
+                  <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                </li>
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 290TA Course Page</a>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 290TA Course Page</a>
                </li>
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 253 Course Page</a>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 253 Course Page</a>
                </li>
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 253 Course Page</a>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 253 Course Page</a>
                </li>
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 253 Course Page</a>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 253 Course Page</a>
                </li>
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 253 Course Page</a>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 253 Course Page</a>
                </li>
                <li>
-                  <label class="checkbox">
-                     <input type="checkbox">
-                     <span class="pop">123</span>
-                     <span class="tag">tag</span>
-                     <a href="#">INFO 253 Course Page</a>
-                  </label>
+                  <span class="badge badge-warning">123</span>
+                  <span class="label label-info">tag</span>
+                  <a href="#">INFO 253 Course Page</a>
                </li>
-            </ul>
+            </ol>
          </div>
+      </div>
+   </div>
+
+   <!-- Modal -->
+   <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+
+   <!-- for static modal -->
+   <!--
+   <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true" data-backdrop="static">
+   -->
+      <div class="modal-header">
+         <h3 id="login-label">Please Login to Your Delicious.com Account</h3>
+      </div>
+
+      <div class="modal-body">
+         <form class="form-horizontal">
+            <div class="control-group">
+               <label class="control-label" for="acct">Account</label>
+               <div class="controls">
+                  <input type="text" name="acct" id="acct">
+               </div>
+            </div>
+            <div class="control-group">
+               <label class="control-label" for="pwd">Password</label>
+               <div class="controls">
+                  <input type="password" name="pwd" id="pwd">
+               </div>
+            </div>
+         </form>
+      </div>
+
+      <div class="modal-footer">
+         <button class="btn btn-primary">Submit</button>
       </div>
    </div>
 
    <!-- place Javascript at the end of the document so the pages load faster -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
+   <script src="login.js"></script>
 </body>
