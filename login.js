@@ -15,6 +15,10 @@ $(document).ready(function() {
    $(".row-fluid .span2").width((doc_width - 55) / 6);
    $(".row-fluid .span10").width((doc_width - 55) * 5 / 6);
 
+   $(".tags .multi-list li span").each(function() {
+      $(this).addClass($(this).text());
+   })
+
    $("#login_btn").click(function() {
       $("#loading_gif").show();
       $("#login_fail_msg").hide();
