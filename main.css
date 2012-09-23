@@ -89,3 +89,27 @@ span.pop, span.tag {
 #login_fail_msg {
    margin-right: 20px;
 }
+
+
+.label-list, .label-list li {
+   display: inline;
+   border: none;  
+   padding: 0;
+}
+.label-list {
+   margin: 0;
+}
+.label-list li {
+   margin-right: 5px;
+}
+.link .multi-list li.hovered {
+   background: #fff;
+}
+
+.tags .multi-list li span.ui-draggable-dragging {
+   background: green;
+}
+.tags .multi-list form {
+   margin-bottom: 0;
+   margin-top: 10px;
+}
