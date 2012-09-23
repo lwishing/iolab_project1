@@ -20,7 +20,7 @@
                <li>Laura</li>
                <li>Chan</li>
                <li>JT</li>
-               <li>JT</li>
+               <li class="selected">JT</li>
             </ul>
          </div>
       </div>
@@ -106,12 +106,15 @@
    </div>
 
    <!-- Modal -->
+   <!--
    <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+   -->
 
    <!-- for static modal -->
-   <!--
+<!--
+   <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+-->
    <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true" data-backdrop="static">
-   -->
       <div class="modal-header">
          <h3 id="login-label">Please Login to Your Delicious.com Account</h3>
       </div>
@@ -134,7 +137,12 @@
       </div>
 
       <div class="modal-footer">
-         <button class="btn btn-primary">Submit</button>
+         <span id="login_fail_msg" class="label label-important">
+            <i class="icon-wrench icon-white"></i>
+            Login Failed. Please Try Again.
+         </span>
+         <img id="loading_gif" src="loading.gif">
+         <button id="login_btn" class="btn btn-primary">Submit</button>
       </div>
    </div>
 
