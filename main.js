@@ -1,14 +1,14 @@
 
 
-// Adds a delete button on hover to Links list
-$('.link .multi-list li').hover(
-	function() {
-		$(this).append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>');
-	},
-	function() {
-		$(this).find("button:last").remove();
-	}
-);
+// // Adds a delete button on hover to Links list
+// $('.link .multi-list li').hover(
+// 	function() {
+// 		$('button', this).css('visibility', 'visible');
+// 	},
+// 	function() {
+// 		$('button', this).css('visibility', 'hidden');
+// 	}
+// );
 
 
 // Remove an item from Link multi-list

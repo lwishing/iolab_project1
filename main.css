@@ -75,7 +75,7 @@ span.label-info {
 }
 
 .list-page h1 {
-   padding: 0 30px;
+   padding: 0 10px;
 }
 
 span.pop, span.tag {
@@ -117,6 +117,11 @@ span.pop, span.tag {
    margin-top: 10px;
 }
 
-button {
+.btn-success {
    float:right;
+   margin-top: 5px;
+}
+
+a {
+   line-height: 150px;
 }
