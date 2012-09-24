@@ -20,7 +20,6 @@ $(document).ready(function() {
       $(this).addClass($(this).text());
    })
 
-
    $("#acct").focus();
 
    $("#pwd").keyup(function(event){
@@ -28,7 +27,6 @@ $(document).ready(function() {
          $("#login_btn").click();
       }
    });
-
 
    $("#login_btn").click(function() {
       $("#loading_gif").show();
@@ -48,6 +46,7 @@ $(document).ready(function() {
             if (rsp.result_code === "200") {
                // login success
                $("#login-modal").modal("hide");
+               load_friends_list(postData.username);
             } else {
                // login failed
                $("#login_fail_msg").show();
