@@ -40,6 +40,7 @@ function load_user_tags(username) {
 						$('<li></li>').html('<span class="label label-info">' + key+'</span>')
 						.appendTo('#user-tags ul');
 					}
+
 				}
 				// this.u // url
 				// this.d // description
@@ -50,6 +51,7 @@ function load_user_tags(username) {
 //						.appendTo('#user-tags ul');
 //				});
 			});
+			sortList();
 	});
 }
 
@@ -124,7 +126,9 @@ function load_bookmarks(username, json_file) {
 				.data('extended', this.n)
 				.data('tags', this.t)
 				.appendTo('#new_trail ol');
+
 		});
+	sortList();
 		//$('#new_trail li').draggable({revert: true});
 }
 
@@ -172,6 +176,7 @@ function load_tags_bookmarks(username, tags_name) {
 						// 		.appendTo('#new_trail ol');
 					}
 		});
+	sortList();
 	});
 }
 

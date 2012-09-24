@@ -31,7 +31,6 @@ $(document).on('click', '.multiple li', function(event){
 $(document).on('click', '#friends-list .list-area ul li', function(event){
 	if ($('#trail-tags .list-area ul li').length === 0) {
 		$('#trail-tags p').remove();
-		$('#step-tags .list-area').append('<p>Select a trail from the left</p>');
 	}
 });
 $(document).on('click', '#trail-tags .list-area ul li', function(event){
