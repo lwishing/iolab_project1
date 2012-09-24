@@ -3,8 +3,9 @@ $(document).ready(function() {
    $("#login_fail_msg").hide();
    $("#login-modal").hide();
    $("#login-modal").modal("show");
+   sortList();
 
-   doc_height = $(document).height();
+   doc_height = $(window).height();
    $(".row-fluid.upper").height(doc_height * 0.3);
    $(".row-fluid.lower").height((doc_height - 170) * 0.7);
    $(".list-area").height((doc_height - 230) * 0.3);
@@ -14,6 +15,10 @@ $(document).ready(function() {
    $(".row-fluid .span4").width((doc_width - 86) / 3);
    $(".row-fluid .span2").width((doc_width - 55) / 6);
    $(".row-fluid .span10").width((doc_width - 55) * 5 / 6);
+
+   $(".tags .multi-list li span").each(function() {
+      $(this).addClass($(this).text());
+   })
 
    $("#login_btn").click(function() {
       $("#loading_gif").show();

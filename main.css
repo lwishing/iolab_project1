@@ -13,6 +13,7 @@ body {
 .multi-list {
    margin: 0;
    padding: 0;
+   cursor: default;
 }
 
 .multi-list li {
@@ -25,6 +26,17 @@ body {
    padding: 6px 10px;
    line-height: 36px;
    font-size: 20px;
+}
+
+p {
+   vertical-align: middle;
+   border-top: 1px solid rgb(201, 228, 242);
+   border-bottom: 1px solid rgb(201, 228, 242);
+   margin: 0;
+   padding: 6px 10px;
+   line-height: 36px;
+   font-size: 20px;
+   color: #999;
 }
 
 .multi-list li:first-child {
@@ -75,7 +87,7 @@ span.label-info {
 }
 
 .list-page h1 {
-   padding: 0 30px;
+   padding: 0 10px;
 }
 
 span.pop, span.tag {
@@ -88,4 +100,40 @@ span.pop, span.tag {
 
 #login_fail_msg {
    margin-right: 20px;
+}
+
+
+.label-list, .label-list li {
+   display: inline;
+   border: none;  
+   padding: 0;
+}
+.label-list li:first-child {
+   border-top: none;
+}
+.label-list {
+   margin: 0;
+}
+.label-list li {
+   margin-right: 5px;
+}
+.link .multi-list li.hovered {
+   background: #fff;
+}
+
+.tags .multi-list li span.ui-draggable-dragging {
+   background: green;
+}
+.tags .multi-list form {
+   margin-bottom: 0;
+   margin-top: 10px;
+}
+
+.btn-success {
+   float:right;
+   margin-top: 5px;
+}
+
+a {
+   line-height: 150px;
 }
