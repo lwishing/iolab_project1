@@ -28,15 +28,14 @@ $(document).on('click', '.multiple li', function(event){
 
 
 // Get rid of instructions in Trails list and add instructions to Tags list
-$(document).on('click', '#friends .list-area ul li', function(event){
-	if ($('#trails .list-area ul li').length === 0) {
-		$('#trails p').remove();
-		$('#trails .list-area ul').append('<li>trail:INFO_202</li><li>trail:INFO_290TA</li><li>trail:INFO_253</li>');
-		$('#tags .list-area').append('<p>Select a trail from the left</p>');
+$(document).on('click', '#friends-list .list-area ul li', function(event){
+	if ($('#trail-tags .list-area ul li').length === 0) {
+		$('#trail-tags p').remove();
+		$('#step-tags .list-area').append('<p>Select a trail from the left</p>');
 	}
 });
-$(document).on('click', '#trails .list-area ul li', function(event){
-	$('#tags p').remove();
+$(document).on('click', '#trail-tags .list-area ul li', function(event){
+	$('#step-tags p').remove();
 });
 
 

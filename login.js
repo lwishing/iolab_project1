@@ -20,6 +20,12 @@ $(document).ready(function() {
       $(this).addClass($(this).text());
    })
 
+   $("#pwd").keyup(function(event){
+      if(event.keyCode == 13){
+         $("#login_btn").click();
+      }
+   });
+
    $("#login_btn").click(function() {
       $("#loading_gif").show();
       $("#login_fail_msg").hide();
@@ -38,6 +44,7 @@ $(document).ready(function() {
             if (rsp.result_code === "200") {
                // login success
                $("#login-modal").modal("hide");
+               load_friends_list(postData.username);
             } else {
                // login failed
                $("#login_fail_msg").show();

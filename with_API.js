@@ -39,7 +39,7 @@ function load_user_tags(username) {
 				// this.n // extended notes
 				// this.t // array of tags
 				$(this.t).each(function(){
-					$('<li></li>').html('<span>' + this+'</span>')
+					$('<li></li>').html('<span class="label label-info">' + this+'</span>')
 						.appendTo('#user-tags ul');
 				});
 			});
@@ -109,15 +109,15 @@ function load_bookmarks(username, json_file) {
 		// this.n // extended notes
 		// this.t // array of tags
 		
-		$('<li></li>').html('<span class="badge badge-warning">123</span>')
-				.append('<span class="label label-info">tag</span>')
-				.append('<a href="'+this.u+'">' + this.d+'</a>')
+		$('<li></li>').html('<img style="float:right;" src="http://custom.pagepeeker.com/t/m/'+this.u+'" alt="">')
 				.append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>')
+				.append('<ul class="label-list"></ul>')
+				.append('<a href="'+this.u+'">' + this.d+'</a>')
 				.data('extended', this.n)
 				.data('tags', this.t)
-				.appendTo('#bookmarks ol');
+				.appendTo('#new_trail ol');
 		});
-		//$('#bookmarks li').draggable({revert: true});
+		//$('#new_trail li').draggable({revert: true});
 }
 
 // Load final Bookmarks
@@ -137,20 +137,27 @@ function load_tags_bookmarks(username, tags_name) {
 					temp_url =this.u;
 
 					// prevent duplication
-					$('#bookmarks ol li a').each(function(){
+					$('#new_trail ol li a').each(function(){
 							if ($(this).attr('href') == temp_url){
 									exist_flag=true;
 							}
 					});
 					if (!exist_flag){
-
-						$('<li></li>').html('<span class="badge badge-warning">123</span>')
-								.append('<span class="label label-info">tag</span>')
-								.append('<a href="'+this.u+'">' + this.d+'</a>')
+						$('<li></li>').html('<img style="float:right;" src="http://custom.pagepeeker.com/t/m/'+this.u+'" alt="thumbnail">')
 								.append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>')
+								.append('<ul class="label-list"></ul>')
+								.append('<a href="'+this.u+'">' + this.d+'</a>')
 								.data('extended', this.n)
 								.data('tags', this.t)
-								.appendTo('#bookmarks ol');
+								.appendTo('#new_trail ol');
+						
+						// $('<li></li>').html('<span class="badge badge-warning">123</span>')
+						// 		.append('<span class="label label-info">tag</span>')
+						// 		.append('<a href="'+this.u+'">' + this.d+'</a>')
+						// 		.append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>')
+						// 		.data('extended', this.n)
+						// 		.data('tags', this.t)
+						// 		.appendTo('#new_trail ol');
 					}
 		});
 	});
@@ -167,7 +174,7 @@ $('.friend-username').live('click',function(){
 				username = $(this).attr("name");
 				console.log('user_clicked');
 				console.log('username :' +username);
-				$('#bookmarks ol').html('');
+				$('#new_trail ol').html('');
 				$('#trail-tags ul').html('');
 				$('#step-tags ul').html('');
 				load_trail_tags(username);
@@ -177,7 +184,7 @@ $('.friend-username').live('click',function(){
 $('.trail-lists').live('click',function(){
 				console.log('trail_clicked');
 				trail = $(this).attr("name");
-				$('#bookmarks ol').html('');
+				$('#new_trail ol').html('');
 				$('#step-tags ul').html('');
 				step_flag= false;
 				load_step_tags(username, trail);
@@ -187,7 +194,7 @@ $('.step-lists').live('click',function(){
 				console.log('step_clicked');
 				step = $(this).attr("name");
 				if (!step_flag){
-					$('#bookmarks ol').html('');
+					$('#new_trail ol').html('');
 				}
 				step_flag = true;
 				tags_name = trail + '+' + step;

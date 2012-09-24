@@ -13,18 +13,18 @@
 
 <body>
    <div class="row-fluid upper">
-      <div id="friends" class="list-page span4">
+      <div id="friends-list" class="list-page span4">
          <h1>Friends</h1>
          <div class="list-area">
             <ul class="multi-list single">
-               <li>Laura</li>
+               <!-- <li>Laura</li>
                <li>Chan</li>
                <li>JT</li>
-               <li class="selected">JT</li>
+               <li class="selected">JT</li> -->
             </ul>
          </div>
       </div>
-      <div id="trails" class="list-page span4">
+      <div id="trail-tags" class="list-page span4">
          <h1>Trails</h1>
          <div class="list-area">
             <p>Select a friend from the left</p>
@@ -35,7 +35,7 @@
             </ul>
          </div>
       </div>
-      <div id="tags" class="list-page span4">
+      <div id="step-tags" class="list-page span4">
          <h1>Other Tags</h1>
          <div class="list-area">
             <!-- <p>Select a trail from the left</p> -->
@@ -50,14 +50,14 @@
 
    <hr>
 
-   <div class="row-fluid lower">
+   <div id="user-tags" class="row-fluid lower">
       <div class="list-page span2">
          <h1> My Tags <button id="add-button" class="btn btn-success"><i class="icon-plus icon-white"></i></button></h1>
          <div class="list-area tags">
             <ul class="multi-list">
-               <li><span class="label label-info">trail:INFO_111</span></li>
+               <!-- <li><span class="label label-info">trail:INFO_111</span></li>
                <li><span class="label label-info">trail:INFO_222</span></li>
-               <li><span class="label label-info">trail:INFO_333</span></li>
+               <li><span class="label label-info">trail:INFO_333</span></li> -->
             </ul>
          </div>
       </div>
@@ -66,7 +66,7 @@
          <h1>Links<button id="post-to-delicious" class="btn btn-success">Post Trail to Delicious</button></h1>
          <div class="list-area link">
             <ol class="multi-list">
-               <li>
+               <!-- <li>
                   <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
@@ -131,7 +131,7 @@
                   </ul>
                   <a href="#">INFO 253 Course Page</a>
                   
-               </li>
+               </li> -->
             </ol>
          </div>
       </div>
@@ -156,13 +156,13 @@
             <div class="control-group">
                <label class="control-label" for="acct">Account</label>
                <div class="controls">
-                  <input type="text" name="acct" id="acct">
+                  <input type="text" name="acct" id="acct" value="iolab_trailmaker">
                </div>
             </div>
             <div class="control-group">
                <label class="control-label" for="pwd">Password</label>
                <div class="controls">
-                  <input type="password" name="pwd" id="pwd">
+                  <input type="password" name="pwd" id="pwd" value="iolabtrailmaker">
                </div>
             </div>
          </form>
@@ -183,5 +183,6 @@
    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
    <script src="login.js"></script>
+   <script src="with_API.js"></script>
    <script src="main.js"></script>
 </body>
