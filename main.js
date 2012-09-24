@@ -1,14 +1,44 @@
 
 
-// // Adds a delete button on hover to Links list
-// $('.link .multi-list li').hover(
-// 	function() {
-// 		$('button', this).css('visibility', 'visible');
-// 	},
-// 	function() {
-// 		$('button', this).css('visibility', 'hidden');
-// 	}
-// );
+// Select a single item in Friends and Trails lists
+$(document).on('click', '.single li', function(event){
+	var selectObject = this;
+	var parent = $(this).parent('ul');
+	$('li', parent).each(function(){
+		if (this === selectObject) {
+			$(this).addClass('selected');
+		}
+		else {
+			$(this).removeClass('selected');
+			
+		}
+	});
+});
+
+// Allows for multiple selection in Tags list
+$(document).on('click', '.multiple li', function(event){
+	if ($(this).hasClass('selected')){
+		$(this).removeClass('selected');
+	}
+	else {
+		$(this).addClass('selected');
+	}
+});
+
+
+
+// Get rid of instructions in Trails list and add instructions to Tags list
+$(document).on('click', '#friends .list-area ul li', function(event){
+	if ($('#trails .list-area ul li').length === 0) {
+		$('#trails p').remove();
+		$('#trails .list-area ul').append('<li>trail:INFO_202</li><li>trail:INFO_290TA</li><li>trail:INFO_253</li>');
+		$('#tags .list-area').append('<p>Select a trail from the left</p>');
+	}
+});
+$(document).on('click', '#trails .list-area ul li', function(event){
+	$('#tags p').remove();
+});
+
 
 
 // Remove an item from Link multi-list
@@ -24,7 +54,7 @@ $(document).on('click', '.link .multi-list li button', function(event){
 
 // Create functionality for adding a new tag in Tags list
 // insert input textbox in Tags list
-$(document).on('click', '.btn-success', function(event){
+$(document).on('click', '#add-button', function(event){
 	if ($('#tag-form').length === 0){
 		$('.tags .multi-list').append('<li id="new-tag"><form id="tag-form"><input id="add-tag" type="text" placeholder="Enter new tag..."></form></li>');
 		$('input', '#tag-form').width($('.list-page.span2').width() - 50).focus();
@@ -41,9 +71,7 @@ $('#tag-form').live('submit', function(event){
 	}
 	else {
 		return false;
-	}
-	
-	
+	}	
 });
 
 

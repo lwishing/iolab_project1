@@ -13,10 +13,10 @@
 
 <body>
    <div class="row-fluid upper">
-      <div class="list-page span4">
+      <div id="friends" class="list-page span4">
          <h1>Friends</h1>
          <div class="list-area">
-            <ul class="multi-list">
+            <ul class="multi-list single">
                <li>Laura</li>
                <li>Chan</li>
                <li>JT</li>
@@ -24,23 +24,25 @@
             </ul>
          </div>
       </div>
-      <div class="list-page span4">
+      <div id="trails" class="list-page span4">
          <h1>Trails</h1>
          <div class="list-area">
-            <ul class="multi-list">
-               <li>trail:INFO_202</li>
+            <p>Select a friend from the left</p>
+            <ul class="multi-list single">
+               <!-- <li>trail:INFO_202</li>
                <li>trail:INFO_290TA</li>
-               <li>trail:INFO_253</li>
+               <li>trail:INFO_253</li> -->
             </ul>
          </div>
       </div>
-      <div class="list-page span4">
-         <h1>Steps</h1>
+      <div id="tags" class="list-page span4">
+         <h1>Tags</h1>
          <div class="list-area">
-            <ul class="multi-list">
-               <li>step:1</li>
+            <!-- <p>Select a trail from the left</p> -->
+            <ul class="multi-list multiple">
+               <!-- <li>step:1</li>
                <li>step:2</li>
-               <li>step:3</li>
+               <li>step:3</li> -->
             </ul>
          </div>
       </div>
@@ -50,7 +52,7 @@
 
    <div class="row-fluid lower">
       <div class="list-page span2">
-         <h1>Tags <button class="btn btn-success"><i class="icon-plus icon-white"></i></button></h1>
+         <h1>Tags <button id="add-button" class="btn btn-success"><i class="icon-plus icon-white"></i></button></h1>
          <div class="list-area tags">
             <ul class="multi-list">
                <li><span class="label label-info">trail:INFO_111</span></li>
@@ -60,71 +62,74 @@
          </div>
       </div>
 
-      <div class="list-page span10">
-         <h1>Links<button class="btn btn-success"><i class="icon-plus icon-white"></i></button></h1>
+      <div id="new_trail" class="list-page span10">
+         <h1>Links<button id="post-to-delicious" class="btn btn-success">Post Trail to Delicious</button></h1>
          <div class="list-area link">
             <ol class="multi-list">
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="www.google.com">INFO 202 Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
+                  
                   
                </li>
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="#">INFO 290TA Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   
                </li>
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="#">INFO 253 Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
+                 
                   
                </li>
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="#">INFO 253 Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
+                 
                   
                </li>
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="#">INFO 253 Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   
                </li>
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="#">INFO 253 Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   
                </li>
                <li>
+                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   <button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>
                   <ul class="label-list">
                      
                   </ul>
                   <a href="#">INFO 253 Course Page</a>
-                  <img style="float:right;" src="http://custom.pagepeeker.com/t/m/www.google.com" alt="">
                   
                </li>
             </ol>
@@ -169,7 +174,7 @@
             Login Failed. Please Try Again.
          </span>
          <img id="loading_gif" src="loading.gif">
-         <button id="login_btn" class="btn btn-primary">Submit</button>
+         <button id="login_btn" class="btn btn-primary" type="submit">Submit</button>
       </div>
    </div>
 
