@@ -56,8 +56,10 @@ $(document).ready(function() {
    });
 
    $("#post-to-delicious").click(function(){
-      $('#new_trail h1').text(prompt('Enter a name for your trail:') || 'My New Trail');
-      saveTrail();
+      if ($('.link ol li').length > 0) {
+         $('#new_trail h1').text(prompt('Enter a name for your trail:') || 'My New Trail');
+         saveTrail();
+      }
    });
 });
 
