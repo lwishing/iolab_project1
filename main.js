@@ -1,14 +1,14 @@
 
 
-// Adds a delete button on hover to Links list
-$('.link .multi-list li').hover(
-	function() {
-		$(this).append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>');
-	},
-	function() {
-		$(this).find("button:last").remove();
-	}
-);
+// // Adds a delete button on hover to Links list
+// $('.link .multi-list li').hover(
+// 	function() {
+// 		$('button', this).css('visibility', 'visible');
+// 	},
+// 	function() {
+// 		$('button', this).css('visibility', 'hidden');
+// 	}
+// );
 
 
 // Remove an item from Link multi-list
@@ -24,7 +24,7 @@ $(document).on('click', '.link .multi-list li button', function(event){
 
 // Create functionality for adding a new tag in Tags list
 // insert input textbox in Tags list
-$(document).on('click', '.btn-success', function(event){
+$(document).on('click', '#add-button', function(event){
 	if ($('#tag-form').length === 0){
 		$('.tags .multi-list').append('<li id="new-tag"><form id="tag-form"><input id="add-tag" type="text" placeholder="Enter new tag..."></form></li>');
 		$('input', '#tag-form').width($('.list-page.span2').width() - 50).focus();
