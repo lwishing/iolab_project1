@@ -35,7 +35,7 @@ https://github.com/lwishing/iolab_project1
 
 
 Live URL:
-
+http://people.ischool.berkeley.edu/~wish/trailicious/
 
 
 Browser Support:

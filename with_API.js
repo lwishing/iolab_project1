@@ -100,6 +100,7 @@ function load_step_tags(username, trail_name) {
 					$(json).each(function(index){
 							for( var key in this){
 									if(this.hasOwnProperty(key) && key !=trail_name &&  key.substring(0,4)  !=  'step'){
+									// if(this.hasOwnProperty(key) && key !=trail_name){
 											$('<li class="step-lists" name='+key+'></li>').html('<span>' +key+'</span>')
 											.appendTo('#step-tags ul');							
 									}
