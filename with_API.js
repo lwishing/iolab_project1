@@ -31,17 +31,24 @@ function load_friends_list(user_name) {
 function load_user_tags(username) {
 	console.log("load_tags");
 //	sleep(1000);
-	$.getJSON('http://feeds.delicious.com/v2/json/' + username + '?callback=?',
+	$.getJSON('http://feeds.delicious.com/v2/json/tags/' + username + '?callback=?',
 	 function(json){
 			$(json).each(function(index) {
+				console.log(this);
+				for(var key in this){
+					if(this.hasOwnProperty(key)){
+						$('<li></li>').html('<span class="label label-info">' + key+'</span>')
+						.appendTo('#user-tags ul');
+					}
+				}
 				// this.u // url
 				// this.d // description
 				// this.n // extended notes
 				// this.t // array of tags
-				$(this.t).each(function(){
-					$('<li></li>').html('<span class="label label-info">' + this+'</span>')
-						.appendTo('#user-tags ul');
-				});
+//				$(this.t).each(function(){
+//					$('<li></li>').html('<span class="label label-info">' + this+'</span>')
+//						.appendTo('#user-tags ul');
+//				});
 			});
 	});
 }
@@ -103,13 +110,14 @@ function load_step_tags(username, trail_name) {
 // Load Bookmarks
 function load_bookmarks(username, json_file) {
 	console.log("load_bookmarks");
+	var temp_url='';
 	$(json_file).each(function() {
 		// this.u // url
 		// this.d // description
 		// this.n // extended notes
 		// this.t // array of tags
-		
-		$('<li></li>').html('<img style="float:right;" src="http://custom.pagepeeker.com/t/m/'+this.u+'" alt="">')
+		temp_url = this.u.substring(7);
+		$('<li></li>').html('<img style="float:right;" src="http://custom.pagepeeker.com/t/m/'+temp_url+'" alt="">')
 				.append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>')
 				.append('<ul class="label-list"></ul>')
 				.append('<a href="'+this.u+'">' + this.d+'</a>')
@@ -127,6 +135,8 @@ function load_tags_bookmarks(username, tags_name) {
 	var trail_match_flag= false;
 	var step_match_flag= false;
 	var temp_url = '';
+	var ttemp_url = '';
+
 	$.getJSON('http://feeds.delicious.com/v2/json/' + username + '/'+tags_name+'?callback=?',
 	 function(json){
 		$(json).each(function(index) {
@@ -143,13 +153,15 @@ function load_tags_bookmarks(username, tags_name) {
 							}
 					});
 					if (!exist_flag){
-						$('<li></li>').html('<img style="float:right;" src="http://custom.pagepeeker.com/t/m/'+this.u+'" alt="thumbnail">')
-								.append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>')
-								.append('<ul class="label-list"></ul>')
-								.append('<a href="'+this.u+'">' + this.d+'</a>')
-								.data('extended', this.n)
-								.data('tags', this.t)
-								.appendTo('#new_trail ol');
+						ttemp_url = this.u.substring(7);
+							$('<li></li>').html('<img style="float:right;" src="http://custom.pagepeeker.com/t/m/'+ttemp_url+'" alt="">')
+							.append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>')
+							.append('<ul class="label-list"></ul>')
+							.append('<a href="'+this.u+'">' + this.d+'</a>')
+							.data('extended', this.n)
+							.data('tags', this.t)
+							.appendTo('#new_trail ol');
+		
 						
 						// $('<li></li>').html('<span class="badge badge-warning">123</span>')
 						// 		.append('<span class="label label-info">tag</span>')

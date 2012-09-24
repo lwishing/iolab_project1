@@ -134,6 +134,10 @@ span.pop, span.tag {
    margin-top: 5px;
 }
 
+.btn-danger {
+   margin-right: 10px;
+}
+
 a {
    line-height: 150px;
 }
