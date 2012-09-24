@@ -1,5 +1,15 @@
 
 
+// Adds a delete button on hover to Links list
+$('.link .multi-list li').hover(
+	function() {
+		$(this).append('<button class="btn btn-danger"><i class="icon-remove icon-white"></i></button>');
+	},
+	function() {
+		$(this).find("button:last").remove();
+	}
+);
+
 
 // Remove an item from Link multi-list
 $(document).on('click', '.link .multi-list li button', function(event){
@@ -39,8 +49,9 @@ $('#tag-form').live('submit', function(event){
 
 
 
+
 // Makes Links table sortable and droppable; makes Tags table draggable
-$(function sortList() {
+function sortList() {
 	$('.link .multi-list').sortable();
 	$('.link .multi-list').disableSelection();
 	$('.tags .multi-list li span').draggable( {
@@ -51,7 +62,7 @@ $(function sortList() {
 		hoverClass: 'hovered',
 		drop: handleDropEvent
 	});
-});
+}
 
 function handleDropEvent(event, ui) {
 	var draggable = ui.draggable;

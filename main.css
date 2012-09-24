@@ -116,3 +116,7 @@ span.pop, span.tag {
    margin-bottom: 0;
    margin-top: 10px;
 }
+
+button {
+   float:right;
+}
